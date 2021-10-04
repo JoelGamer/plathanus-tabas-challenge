@@ -10,7 +10,7 @@ class PropertiesController < ApplicationController
   def create
     render json: Property.create!(create_property_params)
   rescue ActiveRecord::RecordInvalid => e
-    render json: e.message, status: :bad_request  
+    render json: e.message, status: :bad_request
   end
 
   def show

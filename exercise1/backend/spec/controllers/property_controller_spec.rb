@@ -47,8 +47,8 @@ RSpec.describe PropertiesController do
   describe "#{controler_name} create" do
     context 'with correct params' do
       let(:params) do
-       { 
-         property: {
+        {
+          property: {
             street: 'Street',
             number: 100,
             apartment: 404,
@@ -63,22 +63,22 @@ RSpec.describe PropertiesController do
         expect(response.status).to be(200)
         expect(json_response).to include(
           'street' => params[:property][:street],
-          'number' =>  params[:property][:number],
-          'apartment' =>  params[:property][:apartment],
-          'description' =>  params[:property][:description],
+          'number' => params[:property][:number],
+          'apartment' => params[:property][:apartment],
+          'description' => params[:property][:description],
         )
       end
     end
 
     context 'with incorrect params' do
       let(:params) do
-        { 
+        {
           property: {
-             street: 'Street',
-             apartment: 404,
-             description: 'Something',
-           }
-         }
+            street: 'Street',
+            apartment: 404,
+            description: 'Something',
+          }
+        }
       end
 
       it 'should not create' do

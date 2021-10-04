@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'faker'
 
 random = Random.new
@@ -9,14 +10,16 @@ custom_images = ['image6.jpeg', 'image7.jpeg', 'image8.jpeg']
 root = Rails.root.to_s
 
 property = Property.new(street: 'Sergipe (My House)', number: 51, apartment: 502)
-custom_images.each { |custom| property.images.attach(io: File.open("#{root}/app/assets/images/#{custom}"), filename: custom) }
+custom_images.each do |custom|
+  property.images.attach(io: File.open("#{root}/app/assets/images/#{custom}"), filename: custom)
+end
 property.save!
 
-for i in 1..49 do
+(1..49).each do |_i|
   image_quantity = random.rand(3) + 3
   images_name = []
 
-  for i in 1..image_quantity do
+  (1..image_quantity).each do |_i|
     images_name << images.sample
   end
 
@@ -27,7 +30,8 @@ for i in 1..49 do
     }
   end
 
-  property = Property.new(street: Faker::Address.street_name, number: random.rand(100) + 1, apartment: random.rand(1000) + 1)
-  image_io.each {|image| property.images.attach(io: File.open(image[:path]), filename: image[:filename]) }
+  property = Property.new(street: Faker::Address.street_name, number: random.rand(100) + 1,
+                          apartment: random.rand(1000) + 1)
+  image_io.each { |image| property.images.attach(io: File.open(image[:path]), filename: image[:filename]) }
   property.save!
 end
