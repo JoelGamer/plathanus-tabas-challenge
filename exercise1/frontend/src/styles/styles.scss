@@ -1,0 +1,48 @@
+@import './components/index.scss';
+@import './general/index.scss';
+@import './properties/index.scss';
+
+body {
+  margin: 0;
+}
+
+.App {
+  font-family: Gilroy,sans-serif;
+
+  .tb-text-white {
+    color: white;
+  }
+
+  .tb-text-gray {
+    color: #555555;
+  }
+
+  .tb-text-gold {
+    color: #DBB95A;
+  }
+
+  .tb-text-700 {
+    font-weight: 700;
+  }
+
+  .tb-text-400 {
+    font-weight: 400;
+  }
+
+  .tb-text-size-5 {
+    font-size: 1.25rem;
+  }
+
+  .tb-text-size-2 {
+    font-size: 1rem;
+  }
+
+  .tb-mh-10 {
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+
+  .tb-bg-black {
+    background-color: black;
+  }
+}

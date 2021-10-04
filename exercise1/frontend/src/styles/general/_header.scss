@@ -1,0 +1,40 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+  padding: 10px;
+  padding-left: 40px;
+  z-index: 10000;
+
+
+  .side {
+    &-left {
+      padding-left: 5px;
+
+      .logo {
+        max-height: 30px;
+        width: auto;
+      }
+    }
+
+    &-center {
+      flex: 1;
+      margin: auto;
+      text-align: center;
+    }
+
+    &-right {
+      display: flex;
+      margin: auto;
+      padding-right: 5px;
+      text-align: end;
+
+      text {
+        margin-right: 2.5px;
+        margin-left: 2.5px;
+      }
+    }
+  }
+}

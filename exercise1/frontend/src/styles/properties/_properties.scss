@@ -1,0 +1,26 @@
+.properties {
+  display: flex;
+  flex-direction: row;
+
+  &-maps {
+    &-container {
+      flex: 1;
+      top: 48px;
+      position: -webkit-sticky;
+      position: sticky;
+      height: 93vh;
+      width: 200px;
+    }
+
+    &-element {
+      height: 100%;
+    }
+  }
+
+  &-cards {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 430px);
+    padding: 10px;
+  }
+}
